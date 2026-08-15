@@ -1,5 +1,6 @@
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from data import WORKOUTS_DB
 import uvicorn
