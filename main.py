@@ -10,6 +10,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],        # Allows requests from any origin (e.g., localhost, Webflow, Vercel, Flutter Web)
+    allow_credentials=True,
+    allow_methods=["*"],        # Allows all HTTP methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],        # Allows all HTTP headers
+)
+
 class WorkoutItem(BaseModel):
     id: int
     name: str
